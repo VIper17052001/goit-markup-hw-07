@@ -55,17 +55,22 @@ ul {
   margin: 0;
   padding-left: 0;
 }
+section {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
 
 /* Header */
 .header {
   display: flex;
   border-bottom: 1px solid #ececec;
 }
-section {
-  padding-top: 94px;
-  padding-bottom: 94px;
-}
+
 .header-logo {
+  color: black;
+  margin-right: 93px;
+}
+.logo {
   font-family: "Raleway";
   font-style: normal;
   font-weight: 700;
@@ -75,23 +80,25 @@ section {
   letter-spacing: 0.03em;
   margin-right: 93px;
 }
-.header-logo-color {
+.logo__color {
   color: var(--first-text-color);
 }
 
-.header-flex {
+.header__flex {
   display: flex;
   align-items: center;
 }
-.header-nav {
+.navigation {
 }
-.header-list {
+.navigation__list {
   display: flex;
   column-gap: 50px;
 }
-.header-item {
+
+.navigation__item {
 }
-.header-link {
+
+.navigation__link {
   display: block;
   color: #212121;
   font-style: normal;
@@ -104,15 +111,16 @@ section {
   position: relative;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.header-link:hover,
-.header-link:focus {
+
+.navigation__link:hover,
+.navigation__link:focus {
   color: var(--first-text-color);
 }
 
-.header-link-color {
+.navigation__link-color {
   color: var(--first-text-color);
 }
-.header-link-color::after {
+.navigation__link-color::after {
   color: var(--first-text-color);
   content: "";
   position: absolute;
@@ -123,18 +131,18 @@ section {
   height: 4px;
   border-radius: 2px;
 }
-.header-contact-list {
+.contact-list {
   display: flex;
   margin-left: auto;
   align-items: center;
 }
-.header-contact-item {
+.contact-list__item {
   margin-right: 50px;
 }
-.header-contact-item:last-child {
+.contact-list__item:last-child {
   margin-right: 0;
 }
-.header-contact-mail {
+.contact-list__mail {
   color: var(--second-text-color);
   font-style: normal;
   font-weight: 500;
@@ -147,16 +155,16 @@ section {
   align-items: center;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.header-contact-mail:hover,
-.header-contact-mail:focus {
+.contact-list__mail:hover,
+.contact-list__mail:focus {
   color: var(--first-text-color);
 }
-.contact-item {
+.contact-list__icon {
   margin-right: 10px;
   fill: currentColor;
   padding: 0;
 }
-.header-contact-tel {
+.contact-list__tel {
   color: var(--second-text-color);
   font-style: normal;
   font-weight: 500;
@@ -169,8 +177,8 @@ section {
   align-items: center;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.header-contact-tel:hover,
-.header-contact-tel:focus {
+.contact-list__tel:hover,
+.contact-list__tel:focus {
   color: var(--first-text-color);
 }
 /* Hero */
@@ -186,10 +194,10 @@ section {
   padding-bottom: 200px;
   margin: auto;
 }
-.hero-flex {
+.hero__flex {
   text-align: center;
 }
-.hero-headline {
+.hero__headline {
   width: 696px;
   text-transform: uppercase;
   color: var(--third-text-color);
@@ -200,7 +208,7 @@ section {
   margin: auto;
   margin-bottom: 30px;
 }
-.hero-btn {
+.hero__btn {
   width: 200px;
   height: 50px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
@@ -218,21 +226,21 @@ section {
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.hero-btn:hover {
+.hero__btn:hover {
   background-color: #188ce8;
 }
 /* Softskills */
 .softskills {
   padding-bottom: 0;
 }
-.softskills-list {
+.softskills__list {
   display: flex;
   column-gap: 30px;
 }
-.softskills-item {
+.softskills__item {
   width: 270px;
 }
-.softskills-headline {
+.softskills__headline {
   text-transform: uppercase;
   font-weight: 700;
   font-size: 14px;
@@ -240,13 +248,13 @@ section {
   letter-spacing: 0.03em;
   margin-bottom: 10px;
 }
-.softskills-text {
+.softskills__text {
   color: var(--second-text-color);
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
 }
-.softskills-img {
+.softskills__img {
   width: 270px;
   height: 120px;
   background-color: #f5f4fa;
@@ -258,10 +266,12 @@ section {
 /* Occupation */
 .occupation {
 }
-.occupation-list {
+.occupation__list {
   position: relative;
+  display: flex;
+  column-gap: 30px;
 }
-.occupation-headline {
+.occupation__headline {
   font-weight: 700;
   font-size: 36px;
   line-height: 1.16;
@@ -269,28 +279,41 @@ section {
   margin-bottom: 50px;
   text-align: center;
 }
-.occupation-list {
+.occupation__text {
+  background: rgba(47, 48, 58, 0.8);
+  position: absolute;
+  width: 370px;
+  height: 70px;
+  bottom: 0;
   display: flex;
-  column-gap: 30px;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
 }
-.occupation-item {
+.occupation__item {
 }
 /* Team */
 .team {
   background-color: var(--second-background-color);
 }
-.team-flex {
+.team__flex {
   background-color: #fff;
   padding-top: 30px;
   padding-bottom: 30px;
 }
-.team-soc {
+.soc {
   display: flex;
   justify-content: center;
   gap: 10px;
   background-color: #fff;
 }
-.team-soc-link {
+.soc__link {
   width: 44px;
   height: 44px;
   background-color: #fff;
@@ -302,15 +325,15 @@ section {
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.team-soc-link:hover,
-.team-soc-link:focus {
+.soc__link:hover,
+.soc__link:focus {
   background-color: #2196f3;
   color: #fff;
 }
-.team-soc-icon {
+.soc__icon {
   fill: currentColor;
 }
-.team-headline {
+.team__headline {
   font-weight: 700;
   font-size: 36px;
   line-height: 1.16;
@@ -318,23 +341,23 @@ section {
   margin-bottom: 50px;
   text-align: center;
 }
-.team-list {
+.card-list {
   display: flex;
   column-gap: 30px;
 }
-.team-item {
+.card-list__item {
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   text-align: center;
 }
-.team-name {
+.card-list__name {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.18;
   letter-spacing: 0.03em;
   margin-bottom: 10px;
 }
-.team-text {
+.card-list__text {
   color: var(--second-text-color);
   font-size: 16px;
   line-height: 1.18;
@@ -523,7 +546,7 @@ section {
   line-height: 1.88;
   letter-spacing: 0.03em;
 }
-
+/* Постійні клієнти */
 .clients {
 }
 .client-list {
@@ -565,7 +588,7 @@ section {
 .client-icon {
   fill: currentColor;
 }
-
+/* Соц-сети в футере */
 .social {
   padding-top: 12px;
   padding-bottom: 0px;
@@ -606,22 +629,22 @@ section {
 .social-soc-icon {
   fill: currentColor;
 }
-.header-item,
-.header-contact-item,
-.softskills-item,
-.occupation-item,
-.team-item,
+.navigation__item,
+.contact-list__item,
+.softskills__item,
+.occupation__item,
+.card-list__item,
 .footer-item,
 .portfolio-nav-item,
 .project-item,
-.team-soc-item,
+.soc__item,
 .client-item {
   list-style-type: none;
 }
 
-.header-link,
-.header-contact-mail,
-.header-contact-tel,
+.navigation__link,
+.contact-list__mail,
+.contact-list__tel,
 .header-logo,
 .footer-logo,
 .map-link,
@@ -631,24 +654,7 @@ section {
 .project-link {
   text-decoration: none;
 }
-
-.occupation-text {
-  background: rgba(47, 48, 58, 0.8);
-  position: absolute;
-  width: 370px;
-  height: 70px;
-  bottom: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 1.14;
-  text-align: center;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-}
+/* Модалка */
 .backdrop {
   position: fixed;
   top: 0;
@@ -862,27 +868,6 @@ section {
   background-color: #188ce8;
 }
 
-.subscribe {
-}
-
-.subscribe-input {
-  display: block;
-  width: 358px;
-  height: 50px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
-  border-radius: 4px;
-  background-color: var(--first-background-color);
-  display: block;
-  padding-left: 16px;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.25;
-  letter-spacing: 0.03em;
-  outline: none;
-
-  color: rgba(255, 255, 255, 0.6);
-}
 .label-text {
   font-style: normal;
   font-weight: 700;
@@ -912,6 +897,28 @@ section {
   justify-content: center;
   cursor: pointer;
   letter-spacing: 0.06em;
+}
+/* Підписка в футері */
+.subscribe {
+}
+
+.subscribe-input {
+  display: block;
+  width: 358px;
+  height: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+  background-color: var(--first-background-color);
+  display: block;
+  padding-left: 16px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: 0.03em;
+  outline: none;
+
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .subscribe-form {
